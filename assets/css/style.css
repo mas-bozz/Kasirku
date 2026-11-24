@@ -1,0 +1,68 @@
+/**
+ * KasirKu - Custom Styles
+ * Clean & Modern POS UI
+ */
+
+:root {
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --sidebar-width: 260px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #334155;
+    background-color: #f8fafc;
+}
+
+/* Card Styling */
+.card {
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 0.75rem;
+}
+
+/* Table Styling */
+.table th {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #f1f5f9;
+}
+
+/* POS specific styles */
+.pos-product-card {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+}
+
+.pos-product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: #3b82f6;
+}
+
+/* Receipt thermal printing */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #print-area, #print-area * {
+        visibility: visible;
+    }
+    #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
+
